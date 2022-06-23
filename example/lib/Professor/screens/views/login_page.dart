@@ -270,7 +270,7 @@ void doAuth(BuildContext context) async {
     await DatabaseHelper.instance
         .getUsers()
         .then((value) => myUser = value.first);
-    globals.loggedUserName=myUser.username;
+    globals.loggedUserName=myUser.firstName+" "+myUser.lastName;
     print(myUser);
     }
 

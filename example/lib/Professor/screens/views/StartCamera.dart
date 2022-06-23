@@ -25,12 +25,7 @@ class _StartCameraState extends State<StartCamera> {
   void initState() {
     super.initState();
     startLive();
-    Future.delayed(Duration(seconds: 25), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ListePresence()),
-      );
-    });
+    
   }
 
   @override
@@ -65,6 +60,12 @@ class _StartCameraState extends State<StartCamera> {
     print('Status code: ${response.statusCode}');
     print('Status code: ${response.body}');
     globals.data = json.decode(response.body) as List;
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ListePresence()),
+      );
+    });
     // print(data);
   }
 

@@ -114,7 +114,7 @@ class _ScanScreenState extends State<ScanScreen> {
         setState(() {
           var nom = value.split(';')[2];
           var prenom = value.split(';')[1];
-          this.fullname = nom + " " + prenom;
+          this.fullname = nom + "_" + prenom;
           var salle = value.split(';')[3];
           globals.scannedStudent = nom;
           qrstr =
@@ -149,7 +149,7 @@ bool equalsIgnoreCase(String string1, String string2) {
     }
     else{
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("Qr invalid"),
+          content: Text("Qr invalid"+globals.nametobecorrected+" l"+this.fullname),
         ));
     }
     Navigator.push(

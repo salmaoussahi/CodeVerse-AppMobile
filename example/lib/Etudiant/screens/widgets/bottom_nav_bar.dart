@@ -1,3 +1,5 @@
+import 'package:arcore_flutter_plugin_example/Etudiant/screens/views/welcome_page.dart';
+import 'package:arcore_flutter_plugin_example/Professor/screens/views/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,6 +85,7 @@ class BottomNavBar extends StatelessWidget {
                           press: () {
                             Navigator.push(context,
                             MaterialPageRoute(builder: (context)=>LoginPageProf())
+                            // MaterialPageRoute(builder: (context)=>WelcomePageProf())
                             );
                           },
                         ), // categorycard
@@ -91,7 +94,8 @@ class BottomNavBar extends StatelessWidget {
                          svgSrc: "assets/images/student.svg",
                           press: () {
                              Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>LoginPage())
+                             MaterialPageRoute(builder: (context)=>LoginPage())
+                            // MaterialPageRoute(builder: (context)=>WelcomePage())
                             );
                           },
                         ), // categorycard

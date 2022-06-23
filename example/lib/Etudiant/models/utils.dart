@@ -3,7 +3,7 @@ import 'distant_image_asset.dart';
 
 class Utils {
   // url de serveur
-  static final String RootUrl = "http://192.168.26.82:8000";
+  static final String RootUrl = "http://192.168.8.119:8000";
 
   // token de l'utilisateur
   static String token = "token here";
