@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../main.dart';
-import '../../models/onboard_data.dart';
 import '../size_configs.dart';
 import './pages.dart';
 import './home_page.dart';
@@ -47,110 +46,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(child: Column(
-            children: [
-                Expanded(
-                    flex: 9,
-                    child: PageView.builder(
-                        controller: _pageController,
-                         onPageChanged: (value) {
-                          setState(() {
-                          currentPage = value;
-                           });
-                          }, 
-                        itemCount: onboardingContents.length,
-                        itemBuilder:(context,index)=>Column(
-                          children: [
-                            SizedBox(
-                               height: sizeV * 5,
-                            ),
-                           Text(onboardingContents[index].title,
-                           style: Theme.of(context).textTheme.headline6,
-                           textAlign: TextAlign.center,
-                           ),
-                           SizedBox(
-                           height: sizeV * 5,
-                           ),
-                           Container(
-                           height: sizeV * 50,
-                           child: Image.asset(
-                           onboardingContents[index].image,
-                           fit: BoxFit.contain,
-                                            ),
-                          ),
-                          RichText(
-                           textAlign: TextAlign.center,
-                           text: TextSpan(
-                           style: Theme.of(context).textTheme.subtitle1,
-                           children: [
-                             TextSpan(text: 'A whole System  '),
-                             TextSpan(
-                              text: 'to make sure of students presences with face recognition ',
-                              style: TextStyle(
-                              color: Colors.blue,
-                              )),
-                              TextSpan(text: 'and improve learning quality '),
-                              TextSpan(text: 'with the latest technologies: '),
-                              TextSpan(
-                               text: 'the Augmented Reality ',
-                               style: TextStyle(
-                                color: Colors.blue,
-                          ),
-                        ),      
-                      ],
-                    ),
-                  ),
-                              SizedBox(
-                                height: sizeV * 5,
-                              ),
-                        ],         
-                    ),
-                ),
-              ),
-              Expanded(
-              flex: 1,
-              child: Column(
-              children: [
-                currentPage == onboardingContents.length - 1
-                ? MyTextButton(
-                   buttonName: 'Get Started',
-                   onPressed: (){
-                     Navigator.push(context,
-                     MaterialPageRoute(builder: (context)=>HomePage())
-                     );
-                   },
-                   bgColor: Colors.blue[50],
-                )
-              : Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  OnboardNavBtn(
-                    name: 'Skip',
-                    onPressed: (){
-                       Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>HomePage())
-                            );
-                    },
-                  ),
-                  Row(
-                  children:
-                  List.generate(onboardingContents.length,(index) => dotIndicator(index),
-                ),
-              ),
-              OnboardNavBtn(
-                name: 'Next',
-                onPressed: () {
-                  _pageController.nextPage(
-                    duration: Duration(milliseconds: 400),
-                    curve: Curves.easeInOut,
-                    );  
-                },
-                )
-            ],
-            ),
-             ],
-            ),
-            ),
-            ],
+           
         )),
     ); 
   }
